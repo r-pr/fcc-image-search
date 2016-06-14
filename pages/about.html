@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Search Abstraction Layer</title>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1em;
+        padding-left: 2em;
+    }
+    .code {
+        border: 1px solid darkgreen;
+        font-family: "Courier New", Courier, monospace;
+        background-color: #e6ffe6;
+        color: darkgreen;
+        font-size: 12px;
+        border-radius: 3px;
+        margin-bottom: 5px;
+    }
+    .inline {
+        display: inline-block;
+        height: 18px;
+        vertical-align:middle;
+        padding:0 5px 5px 5px;
+    }
+    .pre {
+        white-space: pre;
+        padding: 0.5em;
+    }
+    a {
+        color: darkgreen;
+    }
+    p,li {
+        line-height: 26px;
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+</style>
+
+
+</head>
+
+<body>
+    
+    <a href="https://github.com/r-pr/fcc-image-search" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+<h1>Image Search Abstraction Layer</h1>
+<h2>(a <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer" target="_blank">Free Code Camp</a> API project)</h2>
+<p>
+    This microservice (which is built on top of Google custom search) provides a simple API for image search.
+</p>
+
+<p>
+<h2>Usage</h2>
+<ul>
+    <li>API endpoint: <span class="code inline">https://imsearch.herokuapp.com/search</span></li>
+    <li>Response format: JSON</li>
+    <li>Parameters:
+        <ul>
+            <li><i>q</i> [required]: search query</li>
+            <li><i>offset</i> [optional]: how many results will be skipped, counting from the first one</li>
+        </ul>
+    </li>
+    <li>GET-request example:
+    <span class="code inline"><a href="https://imsearch.herokuapp.com/search?q=foo&offset=5" target="_blank">https://imsearch.herokuapp.com/search?q=foo&offset=5</a></span>
+    </li>
+    <li>
+        Response example:
+        <div class="code pre">[
+    {
+        url: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Foo_was_here.jpg",
+        snippet: "Foo was here",
+        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThc2UCAedSGYuBtMtcCdep9wp7wndetyRUsSXvFnRoat_Buw5s1OK-jQ",
+        context: "https://en.wikipedia.org/wiki/Foo_was_here"
+    },
+    //... another 9 objects
+]</div>
+    </li>
+    
+    <li>
+        To get last 10 submitted search queries issue a GET-request to <span class="code inline"><a href="https://imsearch.herokuapp.com/latest" target="_blank">https://imsearch.herokuapp.com/latest</a></span>
+    </li>
+</ul>
+
+</body>
+</html>
