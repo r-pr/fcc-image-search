@@ -29,8 +29,9 @@ app.get('/search', function(req, res, next) {
         q: req.query.q,
     };
     
-    if (req.query.offset && req.query.offset !== '0') 
-        searchOptions.start = req.query.offset;
+    if (req.query.offset && req.query.offset !== '0' 
+        && !isNaN(parseInt(req.query.offset))) 
+            searchOptions.start = req.query.offset;
     
     //fetching images from google 
     request({ url: searchEndpoint, qs :searchOptions }, function(err, response, body) {
